@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="main-container">
+        <h1>Welcome to the Main Page</h1>
+        <p>{{ username }} is successfully logged in!</p>
+    </div>
+    <div><form action="{% url 'logout' %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="logout-btn">
+                Logout
+            </button>
+        </form>
+    </div>
+    
+
+
+     </body>
+</body>
+</html>
